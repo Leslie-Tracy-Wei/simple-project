@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wcx.user.provider.mapper.UserInfoMapper">
+
+    <select id="selectInfo" resultType="com.wcx.user.api.model.UserInfo">
+        select id from user_info where id = '150338262141696107'
+    </select>
+</mapper>

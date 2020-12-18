@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: dwg-user
+
+  messages:
+    basename: i18n/messages
+    cache-seconds: -1
+    encoding: utf-8
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.121.224.120:3306/ec_user?tinyInt1isBit=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
+    username: ec_user
+    password: ec_user
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      minimum-idle: 3
+      maximum-pool-size: 24
+      pool-name: ${spring.application.name}-CP
+      idle-timeout: 10000
+      cachePrepStmts: true
+      prepStmtCacheSize: 250
+      prepStmtCacheSqlLimit: 2048
+      leakDetectionThreshold: 2000
+
+server:
+  port: 9999
+  context-path: /
+  compression:
+    enabled: true
+
+mybatis:
+  mapperLocations: classpath*:com/wcx/user/provider/mapper/*.xml
